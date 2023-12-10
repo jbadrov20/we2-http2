@@ -8,7 +8,7 @@ const port = 5000;
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public', { 'extensions': ['html'] }));
-app.use(express.static('.well-known', { 'extensions': ['txt', 'json'] }));
+app.use('/.well-known/pki-validation', express.static('.well-known/pki-validation', { 'extensions': ['txt', 'json'] }));
 
 
 app.get('/', (req, res) => {
